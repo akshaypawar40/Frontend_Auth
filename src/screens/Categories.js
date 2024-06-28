@@ -86,6 +86,7 @@ const Categories = () => {
             </li>
           ))}
         </ul>
+        {/* Ignore logout button */}
         {userInfo && <Button onClick={logoutHandler}>Logout</Button>}
       </Card>
     </Flex>
