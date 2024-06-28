@@ -1,5 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Card, Heading, Text, Flex, Button, Checkbox } from "@chakra-ui/react";
+import {
+  Card,
+  Heading,
+  Text,
+  Flex,
+  Button,
+  Checkbox,
+  Box,
+} from "@chakra-ui/react";
+import { HiChevronDoubleLeft, HiChevronDoubleRight } from "react-icons/hi";
+
 import { logout } from "../actions/userActions";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -63,15 +73,15 @@ const Categories = () => {
 
   return (
     <Flex direction="column">
-      <Card p="7" w="400px" align="center" boxShadow="md" mt="9">
-        <Heading size="sm" mb="5">
+      <Card p="7" w="400px" boxShadow="md" mt="9">
+        <Heading size="sm" mb="5" align="center">
           Please mark your interests!
         </Heading>
 
         <Text fontSize="14px" align="center" mb="5">
           We will keep you notified.
         </Text>
-        <Text fontSize="14px" align="center" mb="5">
+        <Text fontSize="14px" mb="5">
           My saved interests!
         </Text>
         <ul>
@@ -88,6 +98,19 @@ const Categories = () => {
         </ul>
         {/* Ignore logout button */}
         {userInfo && <Button onClick={logoutHandler}>Logout</Button>}
+        {/* functionality Not Done */}
+        <Flex justifyContent="flex-start" alignItems="center" mt="3">
+          <Box px="2">
+            <HiChevronDoubleLeft />
+          </Box>
+          <Box px="2">1</Box>
+          <Box px="2">2</Box>
+          <Box px="2">3</Box>
+          <Box px="2">4</Box>
+          <Box px="2">
+            <HiChevronDoubleRight />
+          </Box>
+        </Flex>
       </Card>
     </Flex>
   );
